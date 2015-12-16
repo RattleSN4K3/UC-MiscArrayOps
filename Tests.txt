@@ -1,0 +1,93 @@
+ScriptLog: ================
+ScriptLog: ArrayOp test
+ScriptLog: Executing tests: 8
+ScriptLog:
+ScriptLog: Run ArrayOp-initializing-byte with 8 cases...
+ScriptLog: ----------------
+ScriptLog: #1 Pass   (0)
+ScriptLog: #2 Pass   (255)
+ScriptLog: #3 Pass   (0, 255)
+ScriptLog: #4 Pass   (0, 0)
+ScriptLog: #5 Pass   (255, 255)
+ScriptLog: #6 Pass   (0, 1, 2)
+ScriptLog: #7 Pass   (255, 256, 257)
+ScriptLog: #8 Pass   (1, 0, 1)
+ScriptLog: All cases passed.
+ScriptLog:
+ScriptLog: Run ArrayOp-initializing-int with 8 cases...
+ScriptLog: ----------------
+ScriptLog: #1 Pass   (1,2,3)
+ScriptLog: #2 Pass   (3,4)
+ScriptLog: #3 Pass   (0)
+ScriptLog: #4 Pass   (-1,1)
+ScriptLog: #5 Pass   (-2147483648,2147483647)
+ScriptLog: #6 Pass   (0,0)
+ScriptLog: #7 Pass   (-1,-1)
+ScriptLog: #8 Pass   (2,-1)
+ScriptLog: All cases passed.
+ScriptLog:
+ScriptLog: Run ArrayOp-initializing-float with 18 cases...
+ScriptLog: ----------------
+ScriptLog: #1 Pass   (1.f,2,3)
+ScriptLog: #2 Pass   (3.f,4)
+ScriptLog: #3 Pass   (0.f)
+ScriptLog: #4 Pass   (-1.f,1)
+ScriptLog: #5 Pass   (-2147483648.f,2147483647)
+ScriptLog: #6 Pass   (0.f,0)
+ScriptLog: #7 Pass   (-1.f,-1)
+ScriptLog: #8 Pass   (2.f,-1)
+ScriptLog: #9 Pass   (10.f,20.f,30.f)
+ScriptLog: #10 Pass   (30.f,40.f)
+ScriptLog: #11 Pass   (0.f)
+ScriptLog: #12 Pass   (-10.f,10.f)
+ScriptLog: #13 Pass   (0.1234,1.12345,2.123456,3.1234567)
+ScriptLog: #14 Pass   (3.40298765432109876543210987654321098765432,-3.40298765432109876543210987654321098765432)
+ScriptLog: #15 Pass   (0.f,0.f)
+ScriptLog: #16 Pass   (-10.f,-10.f)
+ScriptLog: #17 Pass
+ScriptLog: #18 Pass   (20.f,-10.f)
+ScriptLog: All cases passed.
+ScriptLog:
+ScriptLog: Run ArrayOp-initializing-string with 6 cases...
+ScriptLog: ----------------
+ScriptLog: #1 Pass   ("","")
+ScriptLog: #2 Pass   ("First","Second")
+ScriptLog: #3 Pass   ("OnlyOne")
+ScriptLog: #4 Pass   ("First_Then_Empty","","Now_Last")
+ScriptLog: #5 Pass   ("","First_was_empty")
+ScriptLog: #6 Pass   ("Last_is_empty","pre_last","")
+ScriptLog: All cases passed.
+ScriptLog:
+ScriptLog: Run ArrayOp-initializing-name with 7 cases...
+ScriptLog: ----------------
+ScriptLog: #1 Pass   ("")
+ScriptLog: #2 Pass   ("none")
+ScriptLog: #3 Pass   ("none","")
+ScriptLog: #4 Pass   ("","")
+ScriptLog: #5 Pass   ("none","none")
+ScriptLog: #6 Pass   ("SomeName","AnotherName with Space")
+ScriptLog: #7 Pass   ("Some","","And","","None")
+ScriptLog: All cases passed.
+ScriptLog:
+ScriptLog: Run ArrayOp-initializing-Object with 3 cases...
+ScriptLog: ----------------
+ScriptLog: #1 Pass   (MyNoSound)
+ScriptLog: #2 Pass   (MyNoSound,none)
+ScriptLog: #3 Pass   (Object'Engine.Default__Actor',Object'Engine.Default__Info')
+ScriptLog: All cases passed.
+ScriptLog:
+ScriptLog: Run ArrayOp-initializing-Actor with 3 cases...
+ScriptLog: ----------------
+ScriptLog: #1 Pass   (Actor'Engine.Default__Actor')
+ScriptLog: #2 Pass   (Actor'Engine.Default__Info', none)
+ScriptLog: #3 Pass   (Actor'Engine.Default__Note', Actor'Engine.Default__Info',Actor'UTGame.Default__UTPawn')
+ScriptLog: All cases passed.
+ScriptLog:
+ScriptLog: Run ArrayOp-initializing-class with 2 cases...
+ScriptLog: ----------------
+ScriptLog: #1 Pass   (class)
+ScriptLog: #2 Pass   (class'Actor',class'Info',class'Material',class'class')
+ScriptLog: All cases passed.
+ScriptLog:
+ScriptLog: ================
+ScriptLog: All tests passed.
