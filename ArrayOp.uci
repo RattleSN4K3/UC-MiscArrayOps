@@ -27,6 +27,68 @@
 `ArrayOp(Interface)
 
 
+// Object structs
+
+`ArrayOp(pointer)
+`ArrayOp(qword)
+`ArrayOp(double)
+`ArrayOp(ThreadSafeCounter)
+`ArrayOp(DynamicMap_Mirror)
+`ArrayOp(Map_Mirror)
+`ArrayOp(MultiMap_Mirror)
+`ArrayOp(UntypedBulkData_Mirror)
+`ArrayOp(TextureMipBulkData_Mirror)
+`ArrayOp(IndirectArray_Mirror)
+`ArrayOp(Guid)
+`ArrayOp(Vector)
+`ArrayOp(Vector4)
+`ArrayOp(Vector2D)
+`ArrayOp(TwoVectors)
+`ArrayOp(Plane)
+`ArrayOp(Rotator)
+// `ArrayOp(Quat) causes overloaded operate with different precedence
+`ArrayOp(IntPoint)
+`ArrayOp(TPOV)
+`ArrayOp(Color)
+`ArrayOp(LinearColor)
+`ArrayOp(Box)
+`ArrayOp(BoxSphereBounds)
+`ArrayOp(Matrix)
+`ArrayOp(Cylinder)
+`ArrayOp(InterpCurvePointFloat)
+`ArrayOp(InterpCurveFloat)
+`ArrayOp(InterpCurvePointVector2D)
+`ArrayOp(InterpCurveVector2D)
+`ArrayOp(InterpCurvePointVector)
+`ArrayOp(InterpCurveVector)
+`ArrayOp(InterpCurvePointTwoVectors)
+`ArrayOp(InterpCurveTwoVectors)
+`ArrayOp(InterpCurvePointQuat)
+`ArrayOp(InterpCurveQuat)
+`ArrayOp(RawDistribution)
+`ArrayOp(RenderCommandFence)
+
+// Actor structs
+
+`ArrayOp(TimerData)
+`ArrayOp(TraceHitInfo)
+`ArrayOp(ImpactInfo)
+`ArrayOp(AnimSlotInfo)
+`ArrayOp(AnimSlotDesc)
+`ArrayOp(RigidBodyState)
+`ArrayOp(RigidBodyContactInfo)
+`ArrayOp(CollisionImpactData)
+`ArrayOp(AsyncLineCheckResult)
+`ArrayOp(ReplicatedHitImpulse)
+`ArrayOp(NavReference)
+
+// Info structs
+
+`ArrayOp(Info.KeyValuePair)
+`ArrayOp(PlayerResponseLine)
+`ArrayOp(ServerResponseLine)
+
+
 // =========================================================
 // Array String operations
 // Converting a array of strings to a specific type of array
