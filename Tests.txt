@@ -26,7 +26,7 @@ ScriptLog: #7 Pass   (-1,-1)
 ScriptLog: #8 Pass   (2,-1)
 ScriptLog: All cases passed.
 ScriptLog:
-ScriptLog: Run ArrayOp-initializing-float with 18 cases...
+ScriptLog: Run ArrayOp-initializing-float with 17 cases...
 ScriptLog: ----------------
 ScriptLog: #1 Pass   (1.f,2,3)
 ScriptLog: #2 Pass   (3.f,4)
@@ -44,8 +44,7 @@ ScriptLog: #13 Pass   (0.1234,1.12345,2.123456,3.1234567)
 ScriptLog: #14 Pass   (3.40298765432109876543210987654321098765432,-3.40298765432109876543210987654321098765432)
 ScriptLog: #15 Pass   (0.f,0.f)
 ScriptLog: #16 Pass   (-10.f,-10.f)
-ScriptLog: #17 Pass
-ScriptLog: #18 Pass   (20.f,-10.f)
+ScriptLog: #17 Pass   (20.f,-10.f)
 ScriptLog: All cases passed.
 ScriptLog:
 ScriptLog: Run ArrayOp-initializing-string with 6 cases...

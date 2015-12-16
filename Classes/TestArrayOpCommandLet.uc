@@ -96,7 +96,7 @@ function int Test(string Params)
 `TestCaseDyn(13, ! 3.40298765432109876543210987654321098765432 + -3.40298765432109876543210987654321098765432)
 `TestCaseDyn(14, ! 0.f + 0.f)
 `TestCaseDyn(15, ! -10.f + -10.f)
-`TestCaseDyn(17, ! 20.f + -10.f)
+`TestCaseDyn(16, ! 20.f + -10.f)
 `TestCaseEnd()
 
 `TestCaseStart(string, "ArrayOp-initializing-string")
@@ -180,7 +180,7 @@ defaultproperties
 	`TestCaseStatic(float, 13, (3.40298765432109876543210987654321098765432,-3.40298765432109876543210987654321098765432))
 	`TestCaseStatic(float, 14, (0.f,0.f))
 	`TestCaseStatic(float, 15, (-10.f,-10.f))
-	`TestCaseStatic(float, 17, (20.f,-10.f))
+	`TestCaseStatic(float, 16, (20.f,-10.f))
 
 	`TestRunRegister(string)
 	`TestCaseStatic_MultiText(string, 0, ("",""),1)
