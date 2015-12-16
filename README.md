@@ -231,9 +231,9 @@ arr = ! "Elem1" + "NewElem" + "LastElem";
 Result:
 ```
 array<string> arr =
-  [0]: Elem1
-  [1]: NewElem
-  [2]: LastElem
+  [0]: "Elem1"
+  [1]: "NewElem"
+  [2]: "LastElem"
 ```
 
 ### From string
@@ -464,7 +464,7 @@ Now you are able to run the test cases with:
 game.exe run TestArrayOp
 ```
 
-You can check the current test output in the [Test.txt](Test.txt) file.
+You can check the current test output in the [Tests.txt](Tests.txt) file.
 
 # License
 Available under [the MIT license](http://opensource.org/licenses/mit-license.php).
