@@ -1,0 +1,84 @@
+`define TestCaseDefinitions(type)\
+	struct ArrayOpTestCase`{type}\n\
+	{\n\
+		var() array<`{type}> Expected;\n\
+		var() string Text;\n\
+		var bool IsMultiString;\n\
+		var array<string> Texts;\n\
+	};
+	
+`define TestCaseVars(type) var() array<ArrayOpTestCase`{type}> TestCases`{type};
+
+`define TestRunRegister(type) TestRuns.Add(`{type})
+
+`define TestCaseStart(type,casename)\
+	state Run_`{type}\n\
+	{\n\
+		function TestRun()\n\
+		{\n\
+			local int i,r;\n\
+			local string s;\n\
+			local array<int> Results;\n\
+			Loginternal("Run "$`casename$" with"@TestCases`{type}.Length@"cases...");\n\
+			Loginternal("----------------");\n\
+			for (i=0; i<TestCases`{type}.Length; i++)\n\
+			{\n\
+				r = Compare(TestCases`{type}[i].Expected, GetRuntime(i));\n\
+				if (TestCases`{type}[i].IsMultiString){\n\
+					JoinArray(TestCases`{type}[i].Texts, s, Chr(34)$","$Chr(34), false);\n\
+					s = "("$Chr(34)$s$Chr(34)$")";\n\
+				}else{\n\
+					s = TestCases`{type}[i].Text;\n\
+				}\n\
+				LogInternal("#"$(i+1)@(r == 0 ? "Pass" : "Fail")@"  "$s);\n\
+				Results.AddItem(r);\n\
+			}\n\
+			\n\
+			Results.RemoveItem(0);\n\
+			if (Results.Length > 0)\n\
+			{\n\
+				LogInternal("Failed "@Results.Length@"cases");\n\
+				ErrorCount += Results.Length;\n\
+			}\n\
+			else\n\
+			{\n\
+				LogInternal("All cases passed.");\n\
+			}\n\
+		}\n\
+		\n\
+		function int Compare(array<`{type}> A, array<`{type}> B)\n\
+		{\n\
+			local int i, c;\n\
+			i = A.Length - B.Length;\n\
+			if (i != 0)\n\
+			{\n\
+				return i;\n\
+			}\n\
+			\n\
+			for (i=0; i<A.Length; i++)\n\
+			{\n\
+				if (A[i] != B[i])\n\
+				{\n\
+					c++;\n\
+				}\n\
+			}\n\
+			\n\
+			return c;\n\
+		}\n\
+		\n\
+		function array<`{type}> GetRuntime(int i)\n\
+		{\n\
+			local array<`{type}> emptyarr;\n\
+			emptyarr.Length = 0;\n\
+			switch (i)\n\
+			{
+
+`define TestCaseDyn(ind,expr)           case `ind: return `expr;
+`define TestCaseStatic(type,ind,expr,multistring,multiname) TestCases`{type}[`{ind}]=(Expected=`{expr},Text="`{expr}")
+`define TestCaseStatic_MultiText(type,ind,expr,multi,arr) TestCases`{type}[`{ind}]=(Expected=`{expr},IsMultiString=true,Texts=`if(`multi)`{expr}`else`{arr}`endif) 
+
+`define TestCaseEnd()\
+			}\n\
+			return emptyarr;\n\
+		}\n\
+	}
