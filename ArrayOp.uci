@@ -1,0 +1,103 @@
+// ==================================================
+// Array operations
+// Creating a dynamic array from an inline expression
+
+`define ArrayOp(type,spec)\
+	static final preoperator array<`type > ! ( `{spec} `{type} A )\
+	{\
+		local array<`{type}> arr;\
+		arr[0] = A;\
+		return arr;\
+	}\
+	\
+	static final operator(20) array<`type > + ( array<`{type}> arr, `{spec} `{type} B )\
+	{\
+		arr.AddItem(B);\
+		return arr;\
+	}
+
+`ArrayOp(byte)
+`ArrayOp(int)
+`ArrayOp(float)
+`ArrayOp(string)
+`ArrayOp(name)
+`ArrayOp(Object)
+`ArrayOp(Actor)
+`ArrayOp(Class)
+`ArrayOp(Interface)
+
+
+// =========================================================
+// Array String operations
+// Converting a array of strings to a specific type of array
+
+static final operator(16) array<string> / ( string Str, string Delim)
+{
+	local array<string> arr;
+	LogInternal("Str:"@str@" Delim:"@Delim);
+	ParseStringIntoArray(Str, arr, Delim, false);
+	LogInternal("arr length:"@arr.Length);
+	return arr;
+}
+
+`define ArrayStrOp(type)\
+	static final operator(34) array<`{type}> /= ( out array<`{type}> arr, array<string> B)\
+	{\
+		local int i;\
+		arr.Length = B.Length;\
+		for (i=0; i<B.Length; i++)\
+			arr[i] = arr[i] STRCONV B[i];\
+	\
+		return arr;\
+	}
+
+`define ArrayStrConv(type)\
+	static final operator(24) array<`{type}> ~= ( `{type} A, array<string> B)\
+	{\
+		local array<`{type}> outarr;\
+		outarr /= b;\
+		return outarr;\
+	}
+
+`ArrayStrOp(byte)
+`ArrayStrOp(int)
+`ArrayStrOp(float)
+`ArrayStrOp(string)
+`ArrayStrOp(name)
+`ArrayStrOp(Object)
+`ArrayStrOp(Actor)
+`ArrayStrOp(Class)
+//`ArrayStrOp(Interface)
+
+
+`ArrayStrConv(byte)
+`ArrayStrConv(int)
+`ArrayStrConv(float)
+`ArrayStrConv(string)
+`ArrayStrConv(name)
+`ArrayStrConv(Object)
+`ArrayStrConv(Actor)
+`ArrayStrConv(Class)
+//`ArrayStrConv(Interface)
+
+static final operator(34) byte STRCONV ( byte A, string B) {return byte(B);}
+static final operator(34) int STRCONV ( int A, string B) {return int(B);}
+static final operator(34) float STRCONV ( float A, string B) {return float(B);}
+static final operator(34) string STRCONV ( string A, string B) {return B;}
+static final operator(34) name STRCONV ( name A, string B) {return name(B);}
+static final operator(34) Object STRCONV ( Object A, string B)
+{
+	A = FindObject(B, class'Object');
+	return A;
+}
+static final operator(34) Actor STRCONV ( Actor A, string B)
+{
+	A = Actor(FindObject(B, class'Actor'));
+	return A;
+}
+static final operator(34) Class STRCONV ( Class A, string B)
+{
+	A = class(DynamicLoadObject( B, class'class' ));
+	return A;
+}
+//static final operator(34) Interface STRCONV ( Interface A, string B) {return Interface(B);}
