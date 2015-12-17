@@ -68,7 +68,7 @@ an array type of byte.
 
 ### Assignment
 UnrealScript:  
-```
+```UnrealScript
 local array<byte> arr;
 arr = ! byte(0) + 254 + 255;
 ```
@@ -84,7 +84,7 @@ array<byte> arr =
 ### Parse from string with assignment
 
 UnrealScript:
-```
+```UnrealScript
 local array<byte> arr;
 arr /= "0,1,255" / ",";
 ```
@@ -101,7 +101,7 @@ array<byte> arr =
 ### Parse and assignment
 
 UnrealScript:
-```
+```UnrealScript
 local array<byte> arr;
 arr = byte("") ~= "0,1,255" / ",";
 ```
@@ -118,7 +118,7 @@ array<byte> arr =
 
 ### Assignment
 UnrealScript:
-```
+```UnrealScript
 local array<int> arr;
 arr = ! 666 + 777 + 98;
 ```
@@ -134,7 +134,7 @@ array<int> arr =
 ### Parse from string with assignment
 
 UnrealScript:
-```
+```UnrealScript
 local array<int> arr;
 arr /= "1,2,3,5,7" / ",";
 ```
@@ -153,7 +153,7 @@ array<int> arr =
 ### Parse and assignment
 
 UnrealScript:
-```
+```UnrealScript
 local array<int> arr;
 arr = int("") ~= "1,2,3,5,7" / ",";
 ```
@@ -172,7 +172,7 @@ array<int> arr =
 
 ### Assignment
 UnrealScript:
-```
+```UnrealScript
 local array<float> arr;
 arr = ! 1.0f + 2.5f;
 ```
@@ -187,7 +187,7 @@ array<float> arr =
 ### Parse from string with assignment
 
 UnrealScript:
-```
+```UnrealScript
 local array<float> arr;
 arr /= "1.0,2.123,3.23,5.773,-7.1234" / ",";
 ```
@@ -206,7 +206,7 @@ array<float> arr =
 ### Parse and assignment
 
 UnrealScript:
-```
+```UnrealScript
 local array<float> arr;
 arr = float("") ~= "1.0,2.123,3.23,5.773,-7.1234" / ",";
 ```
@@ -226,7 +226,7 @@ array<float> arr =
 
 ### Assignment
 UnrealScript:
-```
+```UnrealScript
 local array<string> arr;
 arr = ! "Elem1" + "NewElem" + "LastElem";
 ```
@@ -242,12 +242,12 @@ array<string> arr =
 ### From string
 
 UnrealScript:
-```
+```UnrealScript
 local array<string> arr;
 arr /= "First,2nd,AnotherOne" / ",";
 ```
 or
-```
+```UnrealScript
 local array<string> arr;
 arr = "First,2nd,AnotherOne" / ",";
 ```
@@ -265,7 +265,7 @@ array<string> arr =
 
 ### Assignment
 UnrealScript:
-```
+```UnrealScript
 local array<name> arr;
 arr = ! 'Elem1' + 'NewName';
 ```
@@ -280,13 +280,13 @@ array<name> arr =
 ### Parse from string with assignment
 
 UnrealScript:
-```
+```UnrealScript
 local array<name> arr;
 arr /= "AName,SomeName" / ",";
 ```
 
 Result:
-```
+```UnrealScript
 array<name> arr =
   [0]: 'AName'
   [1]: 'SomeName'
@@ -296,7 +296,7 @@ array<name> arr =
 ### Parse and assignment
 
 UnrealScript:
-```
+```UnrealScript
 local array<name> arr;
 arr = name("") ~= "AName,SomeName" / ",";
 ```
@@ -313,7 +313,7 @@ array<name> arr =
 
 ### Assignment
 UnrealScript:
-```
+```UnrealScript
 local array<Object> arr;
 arr = ! self + Other;
 ```
@@ -328,7 +328,7 @@ array<Object> arr =
 ### Parse from string with assignment
 
 UnrealScript:
-```
+```UnrealScript
 local array<Object> arr;
 arr /= "MapName.TheWorld:PersistentLevel.MyActor_0,MapName.TheWorld:PersistentLevel.Pawn_2" / ",";
 ```
@@ -344,7 +344,7 @@ array<Object> arr =
 ### Parse and assignment
 
 UnrealScript:
-```
+```UnrealScript
 local array<Object> arr;
 arr = Object("") ~= "MapName.TheWorld:PersistentLevel.MyActor_0,MapName.TheWorld:PersistentLevel.Pawn_2" / ",";
 ```
@@ -361,7 +361,7 @@ array<Object> arr =
 
 ### Assignment
 UnrealScript:
-```
+```UnrealScript
 local array<Actor> arr;
 arr = ! self + Other;
 ```
@@ -376,7 +376,7 @@ array<Actor> arr =
 ### Parse from string with assignment
 
 UnrealScript:
-```
+```UnrealScript
 local array<Actor> arr;
 arr /= "MapName.TheWorld:PersistentLevel.MyActor_0,MapName.TheWorld:PersistentLevel.Pawn_2" / ",";
 ```
@@ -392,7 +392,7 @@ array<Actor> arr =
 ### Parse and assignment
 
 UnrealScript:
-```
+```UnrealScript
 local array<Actor> arr;
 arr = Actor("") ~= "MapName.TheWorld:PersistentLevel.MyActor_0,MapName.TheWorld:PersistentLevel.Pawn_2" / ",";
 ```
@@ -409,7 +409,7 @@ array<Actor> arr =
 
 ### Assignment
 UnrealScript:
-```
+```UnrealScript
 local array<Class> arr;
 arr = ! class'Actor' + class'Info' + class'Pawn';
 ```
@@ -425,7 +425,7 @@ array<Actor> arr =
 ### Parse from string with assignment
 
 UnrealScript:
-```
+```UnrealScript
 local array<Class> arr;
 arr /= "Engine.GameInfo,Engine.Info" / ",";
 ```
@@ -441,7 +441,7 @@ array<Class> arr =
 ### Parse and assignment
 
 UnrealScript:
-```
+```UnrealScript
 local array<Class> arr;
 arr = Class("") ~= "Engine.GameInfo,Engine.Info" / ",";
 ```
