@@ -394,7 +394,8 @@ array<Actor> arr =
 UnrealScript:
 ```UnrealScript
 local array<Actor> arr;
-arr = Actor("") ~= "MapName.TheWorld:PersistentLevel.MyActor_0,MapName.TheWorld:PersistentLevel.Pawn_2" / ",";
+local Actor AnyActor;
+arr = AnyActor ~= "MapName.TheWorld:PersistentLevel.MyActor_0,MapName.TheWorld:PersistentLevel.Pawn_2" / ",";
 ```
 
 Result:
@@ -443,7 +444,7 @@ array<Class> arr =
 UnrealScript:
 ```UnrealScript
 local array<Class> arr;
-arr = Class("") ~= "Engine.GameInfo,Engine.Info" / ",";
+arr = default.class ~= "Engine.GameInfo,Engine.Info" / ",";
 ```
 
 Result:
