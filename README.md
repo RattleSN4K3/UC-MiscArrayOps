@@ -12,7 +12,7 @@ Most of the standard data types are supported.
 - Object, Actor, Class
 - Interface
 
-And also various standard strucs
+And also various standard structs
 - Vector, Rotator, Vector2D, TwoVectors, Plane
 - Color, LinearColor
 - KeyValuePair
@@ -23,7 +23,7 @@ And also various standard strucs
 
 These operations are created in a include-able file (UnrealScript template, *.uci)
 which can be included in a base file which allows to use array operations in every child class.
-Or specifically include the UCI file where ever you need these array operations
+Or specifically include the UCI file where ever you need these array operations.
 
 - Download the [ArrayOp.uci](ArrayOp.uci) file
 - Place it into your root package folder (where `Classes` is located)
@@ -35,7 +35,7 @@ Or specifically include the UCI file where ever you need these array operations
 # Extending
 
 In case you want to have array operations for custom structs, base classes or anything else,
-you can support this by adding a single to the [ArrayOp.uci](ArrayOp.uci) file:  
+you can support this by adding a single line to the [ArrayOp.uci](ArrayOp.uci) file:  
 ```
 `ArrayOp(MyStruct)
 ```
@@ -61,6 +61,10 @@ In case of an int type, it would just create the sum of these values (addition).
 to convert an ELEMENT to an array with the type of that ELEMENT.
 
 ## Array byte
+
+A note about byte arrays, literials (numbers) are mostly parsed as integeter (if not ending with `.f`).
+Therefore the first element (for the `!` operator) has to be explicitly casted to byte in order to return
+an array type of byte.
 
 ### Assignment
 UnrealScript:  
@@ -170,15 +174,14 @@ array<int> arr =
 UnrealScript:
 ```
 local array<float> arr;
-arr = ! 666 + 777 + 98;
+arr = ! 1.0f + 2.5f;
 ```
 
 Result:
 ```
 array<float> arr =
-  [0]: 666
-  [1]: 777
-  [2]: 98
+  [0]: 1.0
+  [1]: 2.5
 ```
 
 ### Parse from string with assignment
