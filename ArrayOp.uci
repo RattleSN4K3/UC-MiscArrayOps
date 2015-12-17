@@ -96,9 +96,7 @@
 static final operator(16) array<string> / ( string Str, string Delim)
 {
 	local array<string> arr;
-	LogInternal("Str:"@str@" Delim:"@Delim);
 	ParseStringIntoArray(Str, arr, Delim, false);
-	LogInternal("arr length:"@arr.Length);
 	return arr;
 }
 
